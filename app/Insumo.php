@@ -6,10 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Insumo extends Model
 {
-    protected $fillable = ['nombre', 'descripcion', 'proveedor', 'medida', 'cantidad', 'price'];
+    protected $fillable = ['nombre', 'slug', 'descripcion', 'medida', 'cantidad', 'price'];
+
+    public $timestamps = false;
 
     public function compras(){
         return $this->belongsToMany('\App\Compra','insumo_compra')
             ->withPivot('compra_id', 'cant_insumo');
     }
+
 }

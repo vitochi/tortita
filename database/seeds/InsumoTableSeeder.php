@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\Insumo;
+use Illuminate\Database\Seeder;
 
 class InsumoTableSeeder extends Seeder
 {

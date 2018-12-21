@@ -1,7 +1,8 @@
-@extends('layouts.layout')
+@extends('admin.layout')
 @section('content')
 <div class="row">
-  <section class="content">
+
+<section class="content">
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
         <div class="panel-body">
@@ -16,7 +17,6 @@
              <thead>
                <th>Nombre</th>
                <th>Descripcion</th>
-               <th>Proveedor</th>
                <th>Medida</th>
                <th>Cantidad</th>
                <th>Precio</th>               
@@ -29,7 +29,6 @@
               <tr>
                 <td>{{$insumo->nombre}}</td>
                 <td>{{$insumo->descripcion}}</td>
-                <td>{{$insumo->proveedor}}</td>
                 <td>{{$insumo->medida}}</td>
                 <td>{{$insumo->cantidad}}</td>
                 <td>{{$insumo->price}}</td>                
@@ -57,5 +56,8 @@
     </div>
   </div>
 </section>
+
+</div>
+  
 
 @endsection

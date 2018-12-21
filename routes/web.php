@@ -23,4 +23,20 @@ Route::resource('cliente', 'ClientController');
 
 Route::resource('insumo', 'InsumoController');
 
+Route::get('insumo/{slug}', [
+		'as' => 'insumo-detail',
+		'uses' => 'CompraController@show'
+]);
+
+Route::get('compra/addInsumo', [
+		'as' => 'insumos-list',
+		'uses' => 'CompraController@addinsumo'
+
+]);
+
 Route::resource('compra', 'CompraController');
+
+Route::get('admin', function(){
+
+	return view('admin.dashboard');
+});

@@ -20,7 +20,6 @@ class CreateInsumoCompraTable extends Migration
             $table->integer('compra_id')->unsigned();
             $table->foreign('compra_id')->references('id')->on('compras');
             $table->integer('cant_insumo');
-            $table->timestamps();
         });
     }
 

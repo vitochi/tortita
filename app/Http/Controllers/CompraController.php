@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Compra;
+use App\Insumo;
+use Illuminate\Http\Request;
 
 class CompraController extends Controller
 {
@@ -14,7 +15,7 @@ class CompraController extends Controller
      */
     public function index()
     {
-        $compras=Compra::orderBy('id','DESC')->paginate(3);
+        $compras=Compra::orderBy('id','DESC')->paginate(10);
         return view('compra.index',compact('compras')); 
     }
 
@@ -25,7 +26,9 @@ class CompraController extends Controller
      */
     public function create()
     {
+        //return view('compra.create', compact('compras'));
         return view('compra.create');
+
     }
 
     /**
@@ -90,5 +93,11 @@ class CompraController extends Controller
     {
         Compra::find($id)->delete();
         return redirect()->route('compra.index')->with('success','Registro eliminado satisfactoriamente');
+    }
+
+    public function addInsumo()
+    {
+         $insumos=Insumo::orderBy('id','DESC')->paginate(10);
+        return view('compra.lista',compact('insumos'));
     }
 }
